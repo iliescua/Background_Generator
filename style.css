@@ -1,11 +1,11 @@
 body {
-	font-family: 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
     color: rgba(0,0,0,.7);
     text-align: center;
     text-transform: uppercase;
     letter-spacing: .7em;
     top: 15%;
-	background: linear-gradient(to right, #00C9FF , #92FE9D);
+    background: linear-gradient(to right, #00C9FF , #92FE9D);
 }
 
 h1 {
@@ -19,7 +19,7 @@ h2 {
 }
 
 h3 {
-	font-size: 1em;
+    font-size: 1em;
     color: rgba(0,0,0,1);
     text-transform: none;
     letter-spacing: 0.01em;
@@ -28,4 +28,16 @@ h3 {
 input {
     border: 1px solid black;
     box-shadow: 0px 0px 4px black;
+}
+
+.getValues {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+button {
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    font-size: 10px;
 }
