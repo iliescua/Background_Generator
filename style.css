@@ -36,8 +36,16 @@ input {
     justify-content: center;
 }
 
-button {
+#copy_btn {
     background: rgba(0, 0, 0, 0);
     border: none;
     font-size: 10px;
+}
+
+#randomize {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    font-size: 0.75em;
+    background-color: rgba(0, 0, 0, 0);
 }
