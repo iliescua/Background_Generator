@@ -1,22 +1,22 @@
-var body = document.getElementById("webpageBody");
-var rgbReport = document.querySelector("h3");
-var firstColor = document.getElementById("firstColor");
-var secondColor = document.getElementById("secondColor");
-var copy_btn = document.getElementById("copy_btn");
-var rand_btn = document.getElementById("randomize");
-var flag = 1;
+const body = document.getElementById("webpageBody");
+const rgbReport = document.querySelector("h3");
+const firstColor = document.getElementById("firstColor");
+const secondColor = document.getElementById("secondColor");
+const copy_btn = document.getElementById("copy_btn");
+const rand_btn = document.getElementById("randomize");
+let flag = 1;
 
 // Function called to display the current rgb values to screen
-function displayValues(){
-    var colorValue = Array.from(body.style.background.toString());
-    var colorString = "";
+const displayValues = () => {
+    let colorValue = Array.from(body.style.background.toString());
+    let colorString = "";
     colorValue.pop();
     // Shift over to remove all words before the first instance of rgb
-    for (var i = 0; i < 26; i++) {
+    for (let i = 0; i < 26; i++) {
         colorValue.shift();
     }
     // Convert arry to string manually because built in methods broke format
-    for (var i = 0; i < colorValue.length; i++){
+    for (let i = 0; i < colorValue.length; i++){
         colorString += colorValue[i];
     }
     rgbReport.innerHTML = colorString;
@@ -26,7 +26,7 @@ function displayValues(){
 }
 
 // Function called to set the gradient colors for the background
-function setGradient(colorOne, colorTwo) {
+const setGradient = (colorOne, colorTwo) => {
     console.log(colorOne, colorTwo);
     body.style.background = "linear-gradient(to right, " + colorOne + ", " + colorTwo + ")";
     displayValues();
@@ -52,8 +52,8 @@ copy_btn.addEventListener("click", function(){
 });
 
 // Function to generate a 6 digit hex value for the color and return it
-function generateColor() {
-    var num = (Math.random() * 0xfffff * 1000000).toString(16);
+const generateColor = () => {
+    let num = (Math.random() * 0xfffff * 1000000).toString(16);
     return "#" + num.slice(0,6);
 }
 
