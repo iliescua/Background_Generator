@@ -4,6 +4,7 @@ const firstColor = document.getElementById("firstColor");
 const secondColor = document.getElementById("secondColor");
 const copy_btn = document.getElementById("copy_btn");
 const rand_btn = document.getElementById("randomize");
+const firstText = "linear-gradient(to right, rgb(0, 201, 255), rgb(146, 254, 157));";
 let flag = 1;
 
 // Function called to display the current rgb values to screen
@@ -42,12 +43,7 @@ secondColor.addEventListener("input", function(){
 
 // Button is used to determine if the CSS code for background gets copied to clipboard
 copy_btn.addEventListener("click", function(){
-    // Check to see if user wants to copy CSS background code before changing a color
-    if (flag === 1){
-        copyText = "linear-gradient(to right, rgb(0, 201, 255), rgb(256, 254, 157));";
-    } else {
-        copyText = body.style.background + ";";
-    }
+    copyText = (flag === 1 ? firstText : body.style.background + ";");
     navigator.clipboard.writeText(copyText);
 });
 
