@@ -33,19 +33,16 @@ const setGradient = (colorOne, colorTwo) => {
     displayValues();
 }
 
-firstColor.addEventListener("input", function() {
+// Function to set the color gradients for the background
+const setColor = () => {
     setGradient(firstColor.value, secondColor.value)
-});
-
-secondColor.addEventListener("input", function(){
-    setGradient(firstColor.value, secondColor.value)
-});
+}
 
 // Button is used to determine if the CSS code for background gets copied to clipboard
-copy_btn.addEventListener("click", function(){
+const setCopyText = () => {
     copyText = (flag === 1 ? firstText : body.style.background + ";");
     navigator.clipboard.writeText(copyText);
-});
+}
 
 // Function to generate a 6 digit hex value for the color and return it
 const generateColor = () => {
@@ -54,8 +51,14 @@ const generateColor = () => {
 }
 
 // When randomize is clicked it updates the color inputs and changes background
-rand_btn.addEventListener("click", function(){
+const randomize =() => {
     firstColor.value = generateColor();
     secondColor.value = generateColor();
     setGradient(firstColor.value, secondColor.value);
-});
+}
+
+// Create the eventlisteners for when desired input is achieved
+firstColor.addEventListener("input", setColor);
+secondColor.addEventListener("input", setColor);
+copy_btn.addEventListener("click", setCopyText);
+rand_btn.addEventListener("click", randomize);
