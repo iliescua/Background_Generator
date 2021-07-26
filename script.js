@@ -12,9 +12,8 @@ const displayValues = () => {
     let colorValue = Array.from(body.style.background.toString());
     colorValue.pop();
     // Shift over to remove all words before the first instance of rgb
-    for (let i = 0; i < 26; i++) {
-        colorValue.shift();
-    }
+    colorValue = colorValue.slice(26);
+    // Convert array into a string to be displayed 
     rgbReport.innerHTML = colorValue.join("");
     colorValue = []
     // Flag used to determine if the user clicks copy before changing color
