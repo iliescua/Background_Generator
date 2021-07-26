@@ -17,6 +17,7 @@ const displayValues = () => {
     }
     rgbReport.innerHTML = colorValue.join("");
     colorValue = []
+    // Flag used to determine if the user clicks copy before changing color
     flag = 0;
 }
 
