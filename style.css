@@ -30,6 +30,10 @@ input {
     box-shadow: 0px 0px 4px black;
 }
 
+button {
+    cursor: pointer;
+}
+
 .getValues {
     display: flex;
     flex-direction: row;
